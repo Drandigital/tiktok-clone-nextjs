@@ -84,7 +84,7 @@ export default function Login() {
                         onClick={() => login()} 
                         className={`
                             flex items-center justify-center w-full text-[17px] font-semibold text-white py-3 rounded-sm
-                            ${(!email || !password) ? 'bg-gray-200' : 'bg-[#F02C56]'}
+                            ${(!email || !password) ? 'bg-gray-200' : 'bg-[#83c92e]'}
                         `}
                     >
                         {loading ? <BiLoaderCircle className="animate-spin" color="#ffffff" size={25} /> : 'Log in'}

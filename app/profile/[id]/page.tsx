@@ -60,7 +60,7 @@ export default function Profile({ params }: ProfilePageTypes) {
                                     <span>Edit profile</span>
                                 </button>
                             ) : (
-                                <button className="flex item-center rounded-md py-1.5 px-8 mt-3 text-[15px] text-white font-semibold bg-[#F02C56]">
+                                <button className="flex item-center rounded-md py-1.5 px-8 mt-3 text-[15px] text-white font-semibold bg-[#83c92e]">
                                     Follow
                                 </button>
                             )}

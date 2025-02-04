@@ -121,7 +121,7 @@ export default function Upload() {
                                 <p className="mt-2 text-gray-400 text-[13px]">Less than 2 GB</p>
                                 <label 
                                     htmlFor="fileInput" 
-                                    className="px-2 py-1.5 mt-8 text-white text-[15px] w-[80%] bg-[#F02C56] rounded-sm cursor-pointer"
+                                    className="px-2 py-1.5 mt-8 text-white text-[15px] w-[80%] bg-[#83c92e] rounded-sm cursor-pointer"
                                 >
                                     Select file
                                 </label>
@@ -156,7 +156,7 @@ export default function Upload() {
                                 {isUploading ? (
                                     <div className="absolute flex items-center justify-center z-20 bg-black h-full w-full rounded-[50px] bg-opacity-50">
                                         <div className="mx-auto flex items-center justify-center gap-1">
-                                            <BiLoaderCircle className="animate-spin" color="#F12B56" size={30} />
+                                            <BiLoaderCircle className="animate-spin" color="#83c92e" size={30} />
                                             <div className="text-white font-bold">Uploading...</div>
                                         </div>
                                     </div>
@@ -204,7 +204,7 @@ export default function Upload() {
                                     </div>
                                 </div>
                                 <div className="flex justify-end max-w-[130px] w-full h-full text-center my-auto">
-                                    <button className="px-8 py-1.5 text-white text-[15px] bg-[#F02C56] rounded-sm">
+                                    <button className="px-8 py-1.5 text-white text-[15px] bg-[#83c92e] rounded-sm">
                                         Edit
                                     </button>
                                 </div>
@@ -241,7 +241,7 @@ export default function Upload() {
                                 <button 
                                     disabled={isUploading}
                                     onClick={() => createNewPost()}
-                                    className="px-10 py-2.5 mt-8 border text-[16px] text-white bg-[#F02C56] rounded-sm"
+                                    className="px-10 py-2.5 mt-8 border text-[16px] text-white bg-[#83c92e] rounded-sm"
                                 >
                                     {isUploading ? <BiLoaderCircle className="animate-spin" color="#ffffff" size={25} /> : 'Post'}
                                 </button>

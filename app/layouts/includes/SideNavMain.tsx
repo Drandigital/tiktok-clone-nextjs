@@ -29,7 +29,7 @@ export default function SideNavMain() {
                     <Link href="/">
                         <MenuItem 
                             iconString="For You" 
-                            colorString={pathname == '/' ? '#F02C56' : ''} 
+                            colorString={pathname == '/' ? '#83c92e' : ''} 
                             sizeString="25"
                         />
                     </Link>
@@ -48,7 +48,7 @@ export default function SideNavMain() {
                         </div>
                     </ClientOnly>
 
-                    <button className="lg:block hidden text-[#F02C56] pt-1.5 pl-2 text-[13px]">See all</button>
+                    <button className="lg:block hidden text-[#83c92e] pt-1.5 pl-2 text-[13px]">See all</button>
 
                     {contextUser?.user?.id ? (
                         <div >
@@ -64,16 +64,16 @@ export default function SideNavMain() {
                                 </div>
                             </ClientOnly>
 
-                            <button className="lg:block hidden text-[#F02C56] pt-1.5 pl-2 text-[13px]">See more</button>
+                            <button className="lg:block hidden text-[#83c92e] pt-1.5 pl-2 text-[13px]">See more</button>
                         </div>
                     ) : null}
                     <div className="lg:block hidden border-b lg:ml-2 mt-2" />
 
                     <div className="lg:block hidden text-[11px] text-gray-500">
-                        <p className="pt-4 px-2">About Newsroom TikTok Shop Contact Careers ByteDance</p>
-                        <p className="pt-4 px-2">TikTok for Good Advertise Developers Transparency TikTok Rewards TikTok Browse TikTok Embeds</p>
-                        <p className="pt-4 px-2">Help Safety Terms Privacy Creator Portal Community Guidelines</p>
-                        <p className="pt-4 px-2">© 2023 TikTok</p>
+                        <p className="pt-4 px-2">Dran Digital Gooway</p>
+                        <p className="pt-4 px-2">Eres creador de contenido para el sector turismo gana dinero con gooway</p>
+                        <p className="pt-4 px-2">Que esperas</p>
+                        <p className="pt-4 px-2">© 2025 Gooway</p>
                     </div>
 
                     <div className="pb-14"></div>

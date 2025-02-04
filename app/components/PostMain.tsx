@@ -39,7 +39,7 @@ export default function PostMain({ post }: PostMainCompTypes) {
                             </span>
                         </Link>
 
-                        <button className="border text-[15px] px-[21px] py-0.5 border-[#F02C56] text-[#F02C56] hover:bg-[#ffeef2] font-semibold rounded-md">
+                        <button className="border text-[15px] px-[21px] py-0.5 border-[#83c92e] text-[#83c92e] hover:bg-[#ffeef2] font-semibold rounded-md">
                             Follow
                         </button>
                     </div>
