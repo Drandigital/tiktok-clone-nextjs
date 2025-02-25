@@ -35,5 +35,11 @@
     "@types/node-fetch": "^2.6.12",
     "canvas": "^2.11.2",
     "raw-loader": "^4.0.2"
+  },
+
+  "engines": {
+    "node": "20.x"
   }
 }
+
+
