@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import { AiFillHeart, AiOutlineHeart, AiOutlineMessage, AiOutlineShareAlt } from "react-icons/ai"
 import { ImMusic } from "react-icons/im"
+import { HiVolumeUp, HiVolumeOff } from "react-icons/hi"
 import Link from "next/link"
 import PostMainLikes from "./PostMainLikes"
 import useCreateBucketUrl from "../hooks/useCreateBucketUrl"
@@ -11,6 +12,7 @@ import { PostMainCompTypes } from "../types"
 export default function PostMainMobile({ post }: PostMainCompTypes) {
     const [isLiked, setIsLiked] = useState(false)
     const [isPlaying, setIsPlaying] = useState(false)
+    const [isMuted, setIsMuted] = useState(false)
     const videoRef = useRef<HTMLVideoElement>(null)
 
     useEffect(() => {
@@ -21,7 +23,13 @@ export default function PostMainMobile({ post }: PostMainCompTypes) {
         if (!postMainElement) return
 
         const observer = new IntersectionObserver((entries) => {
-            entries[0].isIntersecting ? video.play() : video.pause()
+            if (entries[0].isIntersecting) {
+                video.play()
+                setIsPlaying(true)
+            } else {
+                video.pause()
+                setIsPlaying(false)
+            }
         }, { threshold: [0.6] })
 
         observer.observe(postMainElement)
@@ -34,10 +42,18 @@ export default function PostMainMobile({ post }: PostMainCompTypes) {
         
         if (isPlaying) {
             videoRef.current.pause()
+            setIsPlaying(false)
         } else {
             videoRef.current.play()
+            setIsPlaying(true)
         }
-        setIsPlaying(!isPlaying)
+    }
+
+    const handleMuteClick = () => {
+        if (!videoRef.current) return
+        
+        videoRef.current.muted = !videoRef.current.muted
+        setIsMuted(videoRef.current.muted)
     }
 
     return (
@@ -50,7 +66,6 @@ export default function PostMainMobile({ post }: PostMainCompTypes) {
                 ref={videoRef}
                 id={`video-${post.id}`}
                 loop
-                muted
                 playsInline
                 onClick={handleVideoClick}
                 className="mobile-video"
@@ -121,6 +136,23 @@ export default function PostMainMobile({ post }: PostMainCompTypes) {
                         <AiOutlineShareAlt size={32} className="text-white" />
                     </button>
                     <span className="text-white text-xs mt-1 font-semibold mobile-text-shadow">Share</span>
+                </div>
+
+                {/* Sound Control Button */}
+                <div className="flex flex-col items-center">
+                    <button 
+                        onClick={handleMuteClick}
+                        className="mobile-action-btn p-3"
+                    >
+                        {isMuted ? (
+                            <HiVolumeOff size={32} className="text-white" />
+                        ) : (
+                            <HiVolumeUp size={32} className="text-white" />
+                        )}
+                    </button>
+                    <span className="text-white text-xs mt-1 font-semibold mobile-text-shadow">
+                        {isMuted ? "Activar" : "Silenciar"}
+                    </span>
                 </div>
 
                 {/* Music Record */}
