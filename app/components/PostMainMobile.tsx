@@ -94,7 +94,7 @@ export default function PostMainMobile({ post }: PostMainCompTypes) {
             {/* Right Side Actions */}
             <div className="tiktok-mobile-actions">
                 {/* Profile Picture */}
-                <div className="relative">
+                <div className="mobile-profile-container">
                     <Link href={`/profile/${post.profile.user_id}`}>
                         <img 
                             className="w-12 h-12 rounded-full border-2 border-white cursor-pointer" 
@@ -102,7 +102,7 @@ export default function PostMainMobile({ post }: PostMainCompTypes) {
                             alt="Profile"
                         />
                     </Link>
-                    <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-red-500 rounded-full w-6 h-6 flex items-center justify-center">
+                    <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-[#83c92e] rounded-full w-5 h-5 flex items-center justify-center border-2 border-white">
                         <span className="text-white text-xs font-bold">+</span>
                     </div>
                 </div>
@@ -111,72 +111,72 @@ export default function PostMainMobile({ post }: PostMainCompTypes) {
                 <div className="flex flex-col items-center">
                     <button 
                         onClick={() => setIsLiked(!isLiked)}
-                        className="mobile-action-btn p-3"
+                        className="mobile-action-btn"
                     >
                         {isLiked ? (
-                            <AiFillHeart size={32} className="text-red-500" />
+                            <AiFillHeart size={24} className="text-red-500" />
                         ) : (
-                            <AiOutlineHeart size={32} className="text-white" />
+                            <AiOutlineHeart size={24} className="text-white" />
                         )}
                     </button>
-                    <span className="text-white text-xs mt-1 font-semibold mobile-text-shadow">127.5K</span>
+                    <span className="text-white mobile-stats mobile-text-shadow">127.5K</span>
                 </div>
 
                 {/* Comment Button */}
                 <div className="flex flex-col items-center">
-                    <button className="mobile-action-btn p-3">
-                        <AiOutlineMessage size={32} className="text-white" />
+                    <button className="mobile-action-btn">
+                        <AiOutlineMessage size={24} className="text-white" />
                     </button>
-                    <span className="text-white text-xs mt-1 font-semibold mobile-text-shadow">2,847</span>
+                    <span className="text-white mobile-stats mobile-text-shadow">2,847</span>
                 </div>
 
                 {/* Share Button */}
                 <div className="flex flex-col items-center">
-                    <button className="mobile-action-btn p-3">
-                        <AiOutlineShareAlt size={32} className="text-white" />
+                    <button className="mobile-action-btn">
+                        <AiOutlineShareAlt size={24} className="text-white" />
                     </button>
-                    <span className="text-white text-xs mt-1 font-semibold mobile-text-shadow">Share</span>
+                    <span className="text-white mobile-stats mobile-text-shadow">Share</span>
                 </div>
 
                 {/* Sound Control Button */}
                 <div className="flex flex-col items-center">
                     <button 
                         onClick={handleMuteClick}
-                        className="mobile-action-btn p-3"
+                        className="mobile-action-btn"
                     >
                         {isMuted ? (
-                            <HiVolumeOff size={32} className="text-white" />
+                            <HiVolumeOff size={24} className="text-white" />
                         ) : (
-                            <HiVolumeUp size={32} className="text-white" />
+                            <HiVolumeUp size={24} className="text-white" />
                         )}
                     </button>
-                    <span className="text-white text-xs mt-1 font-semibold mobile-text-shadow">
-                        {isMuted ? "Activar" : "Silenciar"}
+                    <span className="text-white mobile-stats mobile-text-shadow">
+                        {isMuted ? "Off" : "On"}
                     </span>
                 </div>
 
                 {/* Music Record */}
-                <div className="w-12 h-12 mobile-action-btn flex items-center justify-center animate-spin-slow">
-                    <ImMusic size={20} className="text-white" />
+                <div className="mobile-action-btn animate-spin-slow">
+                    <ImMusic size={16} className="text-white" />
                 </div>
             </div>
 
             {/* Bottom Info */}
             <div className="tiktok-mobile-info">
                 <div className="text-white">
-                    <div className="flex items-center mb-3">
+                    <div className="flex items-center mb-2">
                         <Link href={`/profile/${post.profile.user_id}`}>
-                            <span className="font-bold text-lg mobile-text-shadow">@{post.profile.name}</span>
+                            <span className="mobile-username mobile-text-shadow">@{post.profile.name}</span>
                         </Link>
-                        <button className="ml-3 border border-white px-4 py-1 rounded text-sm font-semibold bg-black bg-opacity-20 backdrop-blur-sm">
+                        <button className="mobile-follow-btn">
                             Seguir
                         </button>
                     </div>
-                    <p className="text-sm mb-3 max-w-[280px] leading-relaxed mobile-text-shadow">
+                    <p className="mobile-description mobile-text-shadow">
                         {post.text}
                     </p>
-                    <div className="flex items-center text-sm mobile-text-shadow">
-                        <ImMusic size={16} className="mr-2" />
+                    <div className="mobile-music-info mobile-text-shadow">
+                        <ImMusic size={14} />
                         <span>♪ Sonido original - {post.profile.name}</span>
                     </div>
                 </div>
